@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    padding: 1%;
+    margin: 1%;
+    color: white;
+}
+
+.context {
+    background-color: rgba(242, 4, 4, 0.457);
+    width: 560px;
+    text-align: right;
+}
+
+.context li {
+    display: inline-flex;
+}
+
+.context a {
+    text-decoration: none;
+    background-color: rgba(249, 4, 53, 0.500);
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.context-img {
+    background-color: rgba(244, 244, 0, 0.517);
+    text-align: right;
+    position: sticky;
+}
+
+.foot {
+    background-color: rgba(0, 0, 0, 0.53);
+    text-align: center;
+    font-size: 15px;
+    width: 500px;
+}
+.foot a {    
+    text-decoration: none;
+}
+.form-email {
+    text-align: left;
+    font-size: 25px;
+    margin: 10px;
+    padding: 0px;
+    display: inline-table;
+}
+.form-email-p {
+    margin-left: 300px;
+    font-size: 25px;
+}
+.form-email input {
+    padding: 0px;
+    width: 400px;
+    height: 50px;
+    margin: 10px;
+}
+
+.form-code {
+    text-align: right;
+    font-size: 25px;
+    margin: 10px;
+    padding: 0px;
+    display: inline-table;
+
+}
+.form-code-p {
+    margin-right: 300px;
+    font-size: 25px;
+}
+.form-p-valid {
+    text-align: center;
+}
+.form-code input {
+    padding: 0px;
+    width: 400px;
+    height: 50px;
+    margin: 10px;
+    color: black;
+}
+
+
+.inapp-top a {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 3px 5px rgb(17, 0, 255);
+    display: ruby-base;
+    scroll-margin: 10p;
+    margin: 15px;
+    padding: 10px;
+}
+
+.inapp-top h1 {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(1, 0, 0);
+    text-shadow: 2px 3px 5px rgb(17, 0, 255);
+    display: ruby-base;
+    scroll-margin: 10px;;
+    margin: 15px;
+    padding: 10px;
+}
+
+.inapp-top h3 {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(12, 12, 12);
+    text-shadow: 2px 3px 5px rgb(17, 0, 255);
+    display: ruby-base;
+    scroll-margin: 10px;
+    text-align: right;
+    margin: 0px;
+    margin-right: 15px;
+    padding: 0px;
+}
+.inapp-top p {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(1, 1, 1);
+    text-shadow: 2px 3px 5px rgb(17, 0, 255);
+    display: ruby-base;
+    margin: 15px;
+    padding: 10px;
+}
+
+.inapp-top input {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 3px 5px rgb(255, 0, 0);
+    display: ruby-base;
+    margin: 15px;
+    padding: 10px;
+    text-align: right;
+}
+
+.inapp-top {
+    text-align: right;
+    position: relative;
+}
+
+.body-inapp {
+    background-image: url(../img/gradient-dynamic-blue-lines-background_23-2148995756\ \(1\).jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+}
+textarea.tweit {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 3px 5px rgb(255, 0, 0);
+    display: ruby-base;
+    margin: 0px;
+    padding: 0px;
+    text-align: right;
+    width: 400px;
+    
+}
+
+div.post-man {
+    display: inline-flex;
+    margin: 5px;
+    border:1px solid black;
+}
+p.post-man {
+    color:black;
+    width:auto;
+    text-align:justify;
+    padding:5px;
+}
+
+.search {
+    display: inline;
+    width: 10px;
+    height: 10px;
+    margin: 0px;
+    padding: 0%;
+    color: black;
+    background-attachment: fixed;
+    background-color: purple;
+    border-radius: 30px;
+}
+.search form {
+    display: inline;
+    width: 10px;
+    height: 10px;
+    margin: 0px;
+    padding: 0%;
+    margin: 20px;
+}
+.search input {
+    display: inline;
+    margin: 1px;
+    padding: 1%;
+    font-size: 20px;
+    color: blue;
+    border-radius: 30px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <link rel="website icon" href="/static/img/IMG_20240214_170152.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <style>
+        body {
+            background-image: url('/static/img/gradient-dynamic-blue-lines-background_23-2148995756.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen text-white">
+    <menu class="bg-gray-800 bg-opacity-75 rounded-lg p-4 shadow-lg w-80">
+        <div class="flex items-center mb-4">
+            <img src="/static/img/IMG_20240214_170152.jpg" alt="Sorry, for this image" class="rounded-full w-16 h-16 mr-2">
+            <p class="text-2xl font-bold">Kalam</p>
+        </div>
+        <ul class="space-y-2">
+            <li><a href="/" class="block px-4 py-2 bg-blue-600 rounded hover:bg-blue-500 transition">ثبت نام</a></li>
+            <li><a href="/Login" class="block px-4 py-2 bg-blue-600 rounded hover:bg-blue-500 transition">ورود به حساب</a></li>
+            <li><a href="/change_account" class="block px-4 py-2 bg-blue-600 rounded hover:bg-blue-500 transition">تغییر حساب</a></li>
+            <li><a href="/delete_email" class="block px-4 py-2 bg-blue-600 rounded hover:bg-blue-500 transition">حذف حساب</a></li>
+        </ul>
+    </menu>
+
+    {% block body %} 
+    {% endblock %}
+
+    <div class="bg-gray-800 bg-opacity-75 rounded-lg p-4 mt-6 shadow-lg w-80">
+        <div class="flex justify-between">
+            <a onclick="alert('khatati@telegmail.com   -   09111111111')" class="cursor-pointer text-bisque hover:text-gray-300 transition">پشتیبانی</a>
+            <a href="/search/s/" class="cursor-pointer text-bisque hover:text-gray-300 transition">جست و جو</a>
+            <a href="/new/kalam" class="cursor-pointer text-bisque hover:text-gray-300 transition">جدیدترین کلام</a>
+        </div>
+    </div>
+</body>
+</html>

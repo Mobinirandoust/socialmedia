@@ -1,0 +1,190 @@
+<!-- sch.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalam</title>
+</head>
+<body>
+    <a href="/" style="font-size: 20px; text-decoration: none; color:red">بازگشت</a>
+    <div class="search">
+
+        <form action="/search/s/" method="post">
+            <input type="text" name="sabt" title="متن را وارد کنید" placeholder="متن را وارد کنید" value=""> 
+            <input type="submit" value="جست وجو"> 
+        </form>
+
+        </div>
+
+        <div>
+            
+            {% if msg %}
+            
+            {% for i in msg %}
+            <div style="background-color: rgb(3, 110, 240);color: aliceblue;width: 300px;display:inline-flexbox ;">
+                <p style='margin:2px; text-align: right;font-size: 25px;'>{{i.name}}</p>
+                    {{i.chat}}
+                </p>
+                <br>
+                <p class="">{{i.date}}</p>
+                <p class="" >{{i.tag}}</p>
+            </div>
+
+            {% endfor %}
+            {% endif %}
+            
+        </div>
+
+       
+</body>
+</html>
+
+
+
+<!-- new.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" href="/static/img/IMG_20240214_170152.jpg">
+    <title>Kalam</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bodykalam">
+    <p style="text-align: right;"><a href="/" style=" color: rgb(246, 8, 8); text-decoration:none;">بازگشت </a></p>
+    {% for i in kalam %}
+    <div style="background-color: rgb(3, 110, 240);width: 300px;height:300px;;overflow-wrap: break-word; text-align: justify;float: right;" class="">
+        <p style='margin:2px; text-align: right;font-size: 25px;' class="">{{i.name}}</p>
+            {{i.chat}}
+        </p>
+        <br>
+        <p class="">{{i.date}}</p>
+        <p class="" >{{i.tag}}</p>
+    </div>
+    {% endfor %}
+
+</body>
+</html>
+
+<!-- inapp.html -->
+{% if inuser %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="website icon" href="/static/img/IMG_20240214_170152.jpg">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <meta charset="UTF-8">
+    <title>KALAM</title>
+</head>
+<body class="body-inapp">
+<div class="inapp-top">
+    <div style="background-color: rgba(253, 74, 247, 0.716);">
+            <h1 style="font-size: 40px;">تنظیمات</h1>
+                <h2>
+                    <a href="/change_account">تغییر حساب</a>
+                    <a href="/delete_email">حذف حساب</a>
+                    <a href="/Login">خروج حساب</a>
+                </h2>
+    </div>
+   
+</div>
+
+<div class="inapp-top" style="background-color: rgba(10, 229, 14, 0.716);">
+    <p style="font-size: 40px;">امکانات</p>
+    <a href="/home/{{inuser.code}}/">لینک شما</a>
+    <a href="/new/kalam">  جدیدترین کلام ها</a>
+    </div>
+<div class="inapp-top" style="background-color: aqua;">
+    <p style="font-size: 40px;"> پروفایل </p>
+
+    <div class="uption">
+        
+
+    </div>
+    <form action="/Login/sabt_post/" method="post">
+        <input hidden type="text" name="code"  value="{{inuser.code}}">
+        <input hidden type="password" name="password"  value="{{inuser.password}}">
+        <p>نام  {{inuser.name}} </p>
+        <p style="display: inline-flexbox;">{{inuser.code}}  شناسه </p> 
+        <p style="display: inline-flexbox;">{{inuser.email}}  ایمیل  </p>
+       <br>
+    </div>
+
+    <div class="inapp-top">
+       <h3 style="padding: 15px;" class="text"> (بین 20 تا 250 حروف باشه) کلام جدید </h3>
+       <textarea name="chat" rows="6" cols="100" class="tweit" minlength="20" maxlength="250"> </textarea> 
+       <p style="display:flexbox;text-align: right; border: 0cap;">  (بین 3 تا 12 حروف داشته باشه) برچسب   <br>
+        <input type="text" name="tag" title='تگ های خودت اضافه کن' minlength="3" maxlength="12" placeholder="Title Country Geography ..."
+        style="border-radius:20px;width: 250px; height: 40px; padding: 4px; margin: 4px;"></p>
+         <input type="submit" value="ارسال">
+         {% if report %}
+            <h2>{{report}}</h2>
+         {% endif %}
+        </form>
+</div>
+{% if dbchat %}
+<h2 style="text-align: right;"> کلام های شما</h2>
+{% for i in dbchat %}
+<div style="background-color: rgb(3, 110, 240);width: 300px;height:300px;;overflow-wrap: break-word; text-align: justify;float: right;" class="">
+    <p style='margin:2px; text-align: right;font-size: 25px;' class="">{{i.name}}</p>
+    <form action="/delete/kalam/" method="post">
+        <input hidden type="text" name="code"  value="{{inuser.code}}">
+        <input hidden type="password" name="password"  value="{{inuser.password}}">
+        <input hidden type="password" name="ID"  value="{{i.id}}">
+        <input type="submit" value="حذف" style="color: black;">
+    </form>
+        {{i.chat}}
+    </p>
+    <br>
+    <p class="">{{i.date}}</p>
+    <p class="" >{{i.tag}}</p>
+</div>
+{% endfor %}
+{% else %}
+<h2>کلامی برای نمایش وجود ندارد</h2>
+{% endif %}
+</body>
+</html>
+{% endif %}
+
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <style>
+        body{
+            background-image: url('/static/img/gradient-dynamic-blue-lines-background_23-2148995756\ \(1\).jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 600px;
+        }
+    </style>
+    <link rel="website icon" href="/static/img/IMG_20240214_170152.jpg">
+    <link rel="stylesheet" href="/static/css/new1.css">
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <menu type="context" class="context">
+        <div class="context-img"> 
+            <p>Kalam <img src="/static/img/IMG_20240214_170152.jpg" alt="Sorry,for this image" width="100px" height="100px"></p>
+        </div>
+        <li><a href="/">ثبت نام</a></li>
+        <li><a href="/Login">ورود به حساب</a></li>
+        <li><a href="/change_account">تغییر حساب</a></li>
+        <li><a href="/delete_email">حذف حساب</a></li>
+    </menu>
+    {% block body %} 
+    
+    {% endblock %}
+</body>
+
+<div class="foot">
+    <a onclick="alert('khatati@telegmail.com   -   09111111111')" style="cursor: pointer; color: bisque;">پشتیبانی</a>
+    <a style="cursor: pointer; color: bisque;" href="/search/s/" >جست و جو</a>
+    <a href="/new/kalam">جدیدترین کلام</a>
+</div>
+
+</html>

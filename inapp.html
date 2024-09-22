@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="website icon" href="/static/img/IMG_20240214_170152.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <title>KALAM</title>
+</head>
+<body class="bg-gray-100">
+<div class="bg-gradient-to-r from-pink-500 to-purple-500 p-4">
+    <div class="container mx-auto">
+        <h1 class="text-white text-4xl font-bold mb-4">تنظیمات</h1>
+        <div class="flex space-x-4">
+            <a href="/change_account" class="bg-white text-gray-800 px-4 py-2 rounded-md hover:bg-gray-200">تغییر حساب</a>
+            <a href="/delete_email" class="bg-white text-gray-800 px-4 py-2 rounded-md hover:bg-gray-200">حذف حساب</a>
+            <a href="/Login" class="bg-white text-gray-800 px-4 py-2 rounded-md hover:bg-gray-200">خروج حساب</a>
+        </div>
+    </div>
+</div>
+
+<div class="bg-gradient-to-r from-green-500 to-yellow-500 p-4 mt-4">
+    <div class="container mx-auto">
+        <p class="text-white text-4xl font-bold mb-4">امکانات</p>
+        <div class="flex space-x-4">
+            <a href="/home/{{inuser.code}}/" class="bg-white text-gray-800 px-4 py-2 rounded-md hover:bg-gray-200">لینک شما</a>
+            <a href="/new/kalam" class="bg-white text-gray-800 px-4 py-2 rounded-md hover:bg-gray-200">جدیدترین کلام ها</a>
+        </div>
+    </div>
+</div>
+
+<div class="bg-gradient-to-r from-blue-500 to-cyan-500 p-4 mt-4">
+    <div class="container mx-auto">
+        <p class="text-white text-4xl font-bold mb-4">پروفایل</p>
+        <form action="/Login/sabt_post/" method="post" class="space-y-4">
+            <input type="hidden" name="code" value="{{inuser.code}}">
+            <input type="hidden" name="password" value="{{inuser.password}}">
+            <p class="text-white">نام: {{inuser.name}}</p>
+            <p class="text-white">شناسه: {{inuser.code}}</p>
+            <p class="text-white">ایمیل: {{inuser.email}}</p>
+            <h3 class="text-white text-2xl font-bold">کلام جدید (بین 20 تا 250 حروف باشه)</h3>
+            <textarea name="chat" rows="6" cols="100" class="rounded-md p-2 w-full" minlength="20" maxlength="250"></textarea>
+            <div class="flex items-center">
+                <p class="text-white mr-4">برچسب (بین 3 تا 12 حروف داشته باشه)</p>
+                <input type="text" name="tag" title='تگ های خودت اضافه کن' minlength="3" maxlength="12" placeholder="Title Country Geography ..." class="rounded-full px-4 py-2 w-64">
+            </div>
+            <button type="submit" class="bg-white text-gray-800 px-4 py-2 rounded-md hover:bg-gray-200">ارسال</button>
+            {% if report %}
+                <p class="text-white">{{report}}</p>
+            {% endif %}
+        </form>
+    </div>
+</div>
+
+{% if dbchat %}
+<div class="container mx-auto mt-4">
+    <h2 class="text-right text-2xl font-bold mb-4">کلام های شما</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {% for i in dbchat %}
+        <div class="bg-blue-500 text-white rounded-lg p-4">
+            <p class="text-right text-xl font-bold mb-2">{{i.name}}</p>
+            <form action="/delete/kalam/" method="post" class="flex justify-end">
+                <input type="hidden" name="code" value="{{inuser.code}}">
+                <input type="hidden" name="password" value="{{inuser.password}}">
+                <input type="hidden" name="ID" value="{{i.id}}">
+                <button type="submit" class="bg-white text-gray-800 px-4 py-2 rounded-md hover:bg-gray-200">حذف</button>
+            </form>
+            <p class="mb-4">{{i.chat}}</p>
+            <div class="flex justify-between text-sm">
+                <p>{{i.date}}</p>
+                <p>{{i.tag}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<p class="container mx-auto mt-4 text-center text-2xl font-bold">کلامی برای نمایش وجود ندارد</p>
+{% endif %}
+</body>
+</html>

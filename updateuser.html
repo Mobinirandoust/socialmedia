@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+شبکه کلام محور - به روزرسانی حساب 
+{% endblock %}
+  
+{% block body %} 
+
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <form action="/change_account" method="POST" class="bg-white shadow-md rounded-lg p-8 w-96">
+        <h2 class="text-2xl font-bold mb-6 text-center">تغییر حساب</h2>
+        
+        <div class="mb-4">
+            <label for="code" class="block text-gray-700">شناسه</label>
+            <input type="text" name="code" id="code" placeholder="123256" class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        
+        <div class="mb-4">
+            <label for="email" class="block text-gray-700">ایمیل</label>
+            <input type="email" name="email" id="email" placeholder="Gmail Yahoo ..." class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        
+        <div class="mb-4">
+            <label for="password" class="block text-gray-700">گذرواژه</label>
+            <input type="password" name="password" id="password" placeholder="Hard:Zx@2inPL:)" class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        
+        <div class="mb-4">
+            <label for="new_email" class="block text-gray-700">ایمیل جدید</label>
+            <input type="email" name="new_email" id="new_email" placeholder="Gmail Yahoo ..." class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        
+        <div class="mb-4">
+            <label for="newpass" class="block text-gray-700">گذرواژه جدید</label>
+            <input type="password" name="newpass" id="newpass" placeholder="Hard:Zx@2inPL:)" class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        
+        <button type="submit" class="w-full bg-blue-600 text-white rounded-md py-2 hover:bg-blue-500 transition">ارسال</button>
+        
+        {% if report %}
+        <p class="mt-4 text-red-500 text-center">{{ report }}</p>
+        {% endif %}
+    </form>
+</div>
+
+{% endblock %}

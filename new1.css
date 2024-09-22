@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    padding: 0; /* حذف padding عمومی */
+    margin: 0; /* حذف margin عمومی */
+    color: white;
+}
+
+body {
+    font-family: Arial, sans-serif; /* انتخاب فونت مناسب */
+    background-color: #f0f0f0; /* رنگ پس‌زمینه ملایم */
+}
+
+.context {
+    background-color: rgba(242, 4, 4, 0.8); /* افزایش شفافیت */
+    width: 100%; /* استفاده از عرض کامل */
+    max-width: 560px; /* حداکثر عرض */
+    margin: 0 auto; /* مرکز کردن */
+    padding: 20px; /* اضافه کردن padding */
+    border-radius: 10px; /* گوشه‌های گرد */
+}
+
+.context li {
+    display: inline-flex;
+}
+
+.context a {
+    text-decoration: none;
+    background-color: rgba(249, 4, 53, 0.8); /* افزایش شفافیت */
+    color: white;
+    font-size: 18px; /* کاهش اندازه فونت */
+    cursor: pointer;
+    border-radius: 5px; /* گوشه‌های گرد */
+    padding: 10px 15px; /* padding متناسب */
+    margin: 5px; /* کاهش margin */
+    transition: background-color 0.3s; /* اضافه کردن انیمیشن */
+}
+
+.context a:hover {
+    background-color: rgba(249, 4, 53, 1); /* تغییر رنگ در hover */
+}
+
+.foot {
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    font-size: 14px; /* کاهش اندازه فونت */
+    padding: 10px; /* اضافه کردن padding */
+    margin-top: 20px; /* فاصله از بالا */
+}
+
+.foot a {
+    text-decoration: none;
+    color: white; /* رنگ لینک */
+}
+
+.form-email, .form-code {
+    text-align: left;
+    font-size: 20px; /* کاهش اندازه فونت */
+    margin: 10px 0; /* فاصله عمودی */
+}
+
+.form-email input, .form-code input {
+    padding: 10px; /* اضافه کردن padding */
+    width: calc(100% - 22px); /* عرض کامل با احتساب padding */
+    height: 50px;
+    margin: 10px 0; /* فاصله عمودی */
+    border-radius: 5px; /* گوشه‌های گرد */
+    border: 1px solid #ccc; /* اضافه کردن حاشیه */
+}
+
+.inapp-top {
+    text-align: right;
+    margin: 20px; /* فاصله از بالا */
+}
+
+.inapp-top a, .inapp-top h1, .inapp-top h3, .inapp-top p {
+    text-decoration: none;
+    font-size: 18px;
+    color: #000; /* رنگ متن */
+    margin: 10px 0; /* فاصله عمودی */
+}
+
+.inapp-top h1 {
+    font-weight: bold; /* ضخیم کردن عنوان */
+}
+
+.body-inapp {
+    background-image: url(../img/gradient-dynamic-blue-lines-background_23-2148995756.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+textarea.tweit {
+    width: 100%; /* عرض کامل */
+    height: 100px; /* ارتفاع مشخص */
+    margin: 10px 0; /* فاصله عمودی */
+    padding: 10px; /* اضافه کردن padding */
+    border-radius: 5px; /* گوشه‌های گرد */
+    border: 1px solid #ccc; /* اضافه کردن حاشیه */
+}
+
+div.post-man {
+    display: inline-flex;
+    margin: 10px; /* فاصله از اطراف */
+    border: 1px solid #ccc; /* حاشیه ملایم */
+    border-radius: 5px; /* گوشه‌های گرد */
+    padding: 10px; /* اضافه کردن padding */
+    background-color: white; /* رنگ پس‌زمینه */
+}
+
+p.post-man {
+    color: black;
+    text-align: justify; /* تراز کردن متن */
+}
+
+.search {
+    display: inline;
+}

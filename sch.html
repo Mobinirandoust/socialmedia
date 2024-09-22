@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Kalam</title>
+</head>
+<body>
+    <a href="/" class="text-2xl no-underline text-red-500">بازگشت</a>
+    <div class="flex justify-center mt-4">
+        <form action="/search/s/" method="post" class="flex">
+            <input type="text" name="sabt" title="متن را وارد کنید" placeholder="متن را وارد کنید" value="" class="border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"> 
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white rounded-r-md px-4 py-2">جست وجو</button>
+        </form>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4 mt-8">
+        {% if msg %}
+        {% for i in msg %}
+        <div class="bg-blue-500 text-white rounded-lg p-4 w-full sm:w-auto">
+            <p class="text-right text-lg font-bold mb-2">{{i.name}}</p>
+            <p class="text-justify">{{i.chat}}</p>
+            <div class="flex justify-between mt-2">
+                <p class="text-sm">{{i.date}}</p>
+                <p class="text-sm">{{i.tag}}</p>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
